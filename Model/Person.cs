@@ -8,23 +8,23 @@ namespace StudentManagement.Model
 {
     public class Person
     {
-        private static int _nextId = 1;
+        private static int nextId = 1;
 
         public int Id { get; private set; }
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public string Address { get; set; }
+        public string? Address { get; set; }
         public double Height { get; set; }
         public double Weight { get; set; }
 
         public Person()
         {
-            Id = _nextId++;
+            Id = nextId++;
         }
 
         public Person(string name, DateTime dateOfBirth, string address, double height, double weight)
         {
-            Id = _nextId++;
+            Id = nextId++;
             Name = name;
             DateOfBirth = dateOfBirth;
             Address = address;
@@ -32,10 +32,10 @@ namespace StudentManagement.Model
             Weight = weight;
         }
 
-        //handle ID auto increment
+        //id auto increment ++
         public static void SetNextId(int id)
         {
-            _nextId = id;
+            nextId = id;
         }
 
         public override string ToString()

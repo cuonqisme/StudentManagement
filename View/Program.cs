@@ -17,11 +17,12 @@ while (!exit)
     Console.WriteLine("8. Find students by academic performance");
     Console.WriteLine("9. Save student to file");
     Console.WriteLine("10. Load student from file");
-    Console.WriteLine("0. Save & Exit");
+    Console.WriteLine("11. Import Demo Data");
+    Console.WriteLine("0. Exit Program");
     Console.WriteLine("=============================================");
     Console.Write("Enter your choice: ");
 
-    string choice = Console.ReadLine();
+    string? choice = Console.ReadLine();
 
     switch (choice)
     {
@@ -40,24 +41,27 @@ while (!exit)
         case "5":
             manager.DeleteStudent();
             break;
-        case "6":
-            manager.DisplayPerformancePercentage();
-            break;
-        case "7":
-            manager.DisplayGpaPercentage();
-            break;
-        case "8":
-            manager.DisplayStudentsByPerformance();
-            break;
-        case "9":
-            manager.SaveDataToFile();
-            break;
-        case "10":
-            manager.LoadDataFromFile();
+        //case "6":
+        //    manager.DisplayRankingPercentage();
+        //    break;
+        //case "7":
+        //    manager.DisplayGpaPercentage();
+        //    break;
+        //case "8":
+        //    manager.DisplayStudentsByRanking();
+        //    break;
+        //case "9":
+        //    manager.SaveDataToFile();
+        //    break;
+        //case "10":
+        //    manager.LoadDataFromFile();
+        //    break;
+        case "11":
+            manager.DemoData();
             break;
         case "0":
             exit = true;
-            Console.WriteLine("Exiting program.");
+            Console.WriteLine("Exiting program...!");
             break;
         default:
             Console.WriteLine("Invalid choice. Please try again.");

@@ -8,17 +8,17 @@ namespace StudentManagement.Model
 {
     public class Student : Person
     {
-        public string StudentId { get; set; }
-        public string University { get; set; }
+        public string? StudentId { get; set; }
+        public string? University { get; set; }
         public int AcademicYear { get; set; }
 
-        private double _gpa;
+        private double totalGpa;
         public double Gpa
         {
-            get => _gpa;
+            get => totalGpa;
             set
             {
-                _gpa = value;
+                totalGpa = value;
                 Rank = CalculateRank(); //auto update rank
             }
         }
@@ -40,11 +40,11 @@ namespace StudentManagement.Model
         //set gpa with true academic rank
         private AcademicRank CalculateRank()
         {
-            if (_gpa < 3.0) return AcademicRank.Poor;
-            if (_gpa < 5.0) return AcademicRank.Weak;
-            if (_gpa < 6.5) return AcademicRank.Average;
-            if (_gpa < 7.5) return AcademicRank.Good;
-            if (_gpa < 9.0) return AcademicRank.Excellent;
+            if (totalGpa < 3.0) return AcademicRank.Poor;
+            if (totalGpa < 5.0) return AcademicRank.Weak;
+            if (totalGpa < 6.5) return AcademicRank.Average;
+            if (totalGpa < 7.5) return AcademicRank.Good;
+            if (totalGpa < 9.0) return AcademicRank.Excellent;
             return AcademicRank.Excellent;
         }
 
